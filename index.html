@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Conexion a CSS-->
+    <link rel="stylesheet" href="estilos.css">
+    <title>Formulario Animado </title>
+    <script>
+//Validación solo numeros
+function numeros(n){
+            key=n.keyCode || n.which;
+            teclado=String.fromCharCode(key);
+            numero="0123456789";
+            especiales="8-37-38-46"; //array
+            teclado_especial=false;
+
+            for(var i in especiales){
+                if(key==especiales){
+                    teclado_especial=true;
+                }
+            }
+            if(numero.indexOf(teclado) == -1 && !teclado_especial){
+                return false;
+            }
+        }
+        
+//Validación solo letras
+function sololetras(t) {
+    key= t . keyCode || e . which;
+    teclado=String . fromCharCode(key) . toLowerCase();
+    letras="áéíóúabcdefghijklmnñopqrstuvwxyz ";
+    especiales="8-37-38-46-164";
+    teclado_especial=false;
+
+    for(var i in especiales) {
+        for (var i in especiales) {
+            if (key==especiales[i]) {
+                teclado_especial=true;
+                break;
+            }
+        }
+        if (letras.indexOf(teclado) == -1 && !teclado_especial) {
+            return false;
+        }
+    }
+}
+    </script>
+</head>
+
+<body bgcolor="#112564">
+    <form action="https://formsubmit.co/fuentesventura24@gmail.com" class="formulario" method="post">
+        <h1>Tipo de Contacto</h1>
+        
+        <input type="text" class="form_input"onkeypress="return sololetras(event);"onpaste="return false">
+        <label for="" class="form_label"><b>Nombres</b></label>
+
+        <input type="email" class="form_input">
+        <label for="" class="form_label"><b>Correo</b></label>
+
+        <input type="text"onkeypress="return numeros(event);"onpaste="return false" class="form_input">
+        <label for="" class="form_label"><b>Telefono</b></label>
+
+        <input type="text" class="form_input">
+        <label for="" class="form_label"><b>Mensaje</b></label>
+
+        <input type="submit" class="form_boton">
+        <input type="hidden" name="_next" value="https://github.com/CrabbierHalo/Formulario1.git"><!--Link de la página-->
+        <input type="hidden" name="_captcha" value="false">
+
+        <script src='main.js'></script>
+    </form>
+
+</body>
+</html>
